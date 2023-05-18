@@ -1,0 +1,7 @@
+# quete3
+pour ce faire on doir d'abord ouvrir le fichier avec un éditeur de fichier 
+:vi /etc/ssh/sshd_config
+
+Puis on doit modfier la ligne PermitRootLogin no
+
+puis on enregistre et on restart avec commande systemctl restart sshd
