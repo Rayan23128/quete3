@@ -1,0 +1,9 @@
+partie 5.1=
+
+Pour afficher les différents composants de bareos j'ai utilisé la commande 
+bareos-dir -V
+ cependant je n'arrive pas à détecter les composantes 
+ 
+ 5.2 
+ 
+ 5.3
