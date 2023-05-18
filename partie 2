@@ -1,0 +1,31 @@
+# quete3
+#2.1=
+Pour afficher les,systemes de fichiers montés , c'est la commande lsbk
+=
+NAME                   MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda                      8:0    0     8G  0 disk
+└─sda1                   8:1    0     8G  0 part
+  └─md0                  9:0    0     8G  0 raid1
+    ├─md0p1            259:0    0 488,3M  0 part  /boot
+    ├─md0p2            259:1    0     1K  0 part
+    └─md0p5            259:2    0   7,5G  0 part
+      ├─cp3--vg-root   253:0    0   2,8G  0 lvm   /
+      └─cp3--vg-swap_1 253:1    0   976M  0 lvm   [SWAP]
+sr0                     11:0    1  1024M  0 rom
+
+Systèmes utilisés = sda et sr0
+type= raid 1 lvm
+
+#2.2=
+
+#ajout d'un nouveau disque dans l'interface de VMware
+ 
+
+#=remove raid avec mdadm --manage /dev/md0 --remove /dev/sdb1
+
+#on doit copier la table de partitons sur le nouveau disque 
+on utilise la commande sfdisk -d /dev/md0 --add /dev/sdb1
+
+#puis ajout du raid au sdb1 avec :mdadm --manage /dev/md0 --add /dev/sdb1
+
+
