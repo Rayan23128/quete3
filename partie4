@@ -1,0 +1,16 @@
+#4.1=
+
+après vérification netfilter ne semble pas installé 
+on l'installe donc :sudo apt-get install iptables
+puis on affiche les règles :
+iptables -L
+
+seuls les communications des clients vers le serveur sont autorisées 
+
+aucune n'interdit , y'a que des "accept"
+
+#4.2=
+
+Pour ajouter des règles qui permettent à bareos installé sur le serveur de communiquer avec les clients ;
+on doit d'abord autoriser les connexions sortante du serveur bareos vers les clients ; on nous indique que les ports de bareos sont les 9101 9102 9103 
+la commande utilisée est la suivante : sudo iptables -A ( INPUT ou OUTPUT ) -p tcp --dport 910? -j ACCEPT
